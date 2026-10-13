@@ -82,7 +82,7 @@ export const Section18FinalCTA: React.FC = () => {
               className="btn btn-orange btn-lg"
               id="final-cta-take-assessment-btn"
             >
-              <span>[{SECTION_18_CONTENT.ctaAssessmentText}]</span>
+              <span>{SECTION_18_CONTENT.ctaAssessmentText}</span>
               <ArrowRight size={18} />
             </Link>
 

@@ -39,7 +39,16 @@ export const Header: React.FC = () => {
       <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container nav-container">
           {/* Logo */}
+          {/* Logo Lockup */}
           <Link to="/" className="nav-logo-link" aria-label="Avencis Growth Consulting Home">
+            <img
+              src="/assets/avencis-logo-mark.png"
+              alt="Avencis Mark"
+              className="nav-logo-mark"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/assets/avencis-logo.png';
+              }}
+            />
             <img
               src="/assets/avencis-name-logo.png"
               alt="Avencis Growth Consulting"
@@ -108,11 +117,24 @@ export const Header: React.FC = () => {
       <div className={`mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
-            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              to="/"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}
+              aria-label="Avencis Growth Consulting Home"
+            >
+              <img
+                src="/assets/avencis-logo-mark.png"
+                alt="Avencis Mark"
+                style={{ height: '30px', width: 'auto', objectFit: 'contain' }}
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/assets/avencis-logo.png';
+                }}
+              />
               <img
                 src="/assets/avencis-name-logo.png"
                 alt="Avencis"
-                style={{ height: '36px' }}
+                style={{ height: '26px', width: 'auto', objectFit: 'contain' }}
               />
             </Link>
             <button

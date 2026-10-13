@@ -202,7 +202,7 @@ export const Section12FounderDependency: React.FC<Section12FounderDependencyProp
                 className="btn btn-primary btn-lg"
                 id="founder-dependency-cta-btn"
               >
-                <span>[{SECTION_12_CONTENT.ctaText}]</span>
+                <span>{SECTION_12_CONTENT.ctaText}</span>
                 <ArrowRight size={18} />
               </Link>
 

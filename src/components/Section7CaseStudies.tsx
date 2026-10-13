@@ -123,7 +123,7 @@ export const Section7CaseStudies: React.FC = () => {
                     borderBottom: '1px solid var(--av-slate-200)'
                   }}
                 >
-                  <span>[Read the Case Study →]</span>
+                  <span>Read the Case Study</span>
                   <ChevronRight size={16} />
                 </button>
 
@@ -142,7 +142,7 @@ export const Section7CaseStudies: React.FC = () => {
           ))}
         </div>
 
-        {/* Detailed Modal for [Read the Case Study →] */}
+        {/* Detailed Modal for Read the Case Study */}
         {selectedStudy && (
           <div
             style={{

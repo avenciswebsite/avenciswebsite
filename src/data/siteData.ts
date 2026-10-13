@@ -1287,7 +1287,7 @@ export const SECTION_12_CONTENT = {
   toIntro: 'to:',
   toState: 'Founder → Strategic Leader',
   underneathNote: 'with systems handling the execution underneath.',
-  ctaText: 'Check My Founder Dependency →',
+  ctaText: 'Check My Founder Dependency',
   whatsappKeyword: 'FOUNDER'
 };
 
@@ -1463,7 +1463,7 @@ export const SECTION_18_CONTENT = {
     'No sales pitch required.',
     'Just clarity.'
   ],
-  ctaAssessmentText: 'TAKE THE BUSINESS ASSESSMENT',
+  ctaAssessmentText: 'Take the Business Assessment',
   whatsappLead: 'Or WhatsApp:',
   whatsappKeyword: 'ASSESSMENT'
 };

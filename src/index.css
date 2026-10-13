@@ -292,15 +292,64 @@ img {
 .nav-logo-link {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.nav-logo-link:hover {
+  opacity: 0.9;
+}
+
+.nav-logo-mark {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-logo-img {
-  height: 38px;
+  height: 30px;
   width: auto;
   object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .nav-logo-mark {
+    height: 28px;
+  }
+  .nav-logo-img {
+    height: 26px;
+  }
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.footer-logo-link:hover {
+  opacity: 0.9;
+}
+
+.footer-logo-mark {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-logo-name {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);
 }
 
 .nav-links-desktop {

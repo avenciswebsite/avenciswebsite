@@ -216,7 +216,7 @@ export const Section8AssessmentIntro: React.FC<Section8AssessmentIntroProps> = (
               className="btn btn-orange btn-lg"
               id="assessment-launch-interactive-btn"
             >
-              <span>[TAKE THE FREE ASSESSMENT]</span>
+              <span>Take the Free Assessment</span>
               <ArrowRight size={18} />
             </button>
           </div>

@@ -22,11 +22,24 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand & Positioning */}
           <div>
             <div style={{ marginBottom: '16px' }}>
-              <Link to="/" style={{ display: 'inline-block' }}>
+              <Link
+                to="/"
+                className="footer-logo-link"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}
+                aria-label="Avencis Growth Consulting Home"
+              >
+                <img
+                  src="/assets/avencis-logo-dark-bg-mark.png"
+                  alt="Avencis Mark"
+                  className="footer-logo-mark"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/assets/Avencis Logo For Dark Bg.png';
+                  }}
+                />
                 <img
                   src="/assets/avencis-name-logo.png"
                   alt="Avencis Growth Consulting"
-                  style={{ height: '42px', filter: 'brightness(0) invert(1)' }}
+                  className="footer-logo-name"
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src = '/assets/avencis-logo.png';
                   }}

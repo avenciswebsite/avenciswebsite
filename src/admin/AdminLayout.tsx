@@ -70,7 +70,7 @@ export const AdminLayout: React.FC = () => {
       <div className="p-5 border-b border-white/10 flex items-center justify-between">
         <Link to="/admin" className="flex items-center gap-3">
           <img
-            src="/assets/avencis-logo.png"
+            src="/assets/avencis-logo-dark-bg-favicon.png"
             alt="Avencis"
             className="h-8 w-8 object-contain"
           />
