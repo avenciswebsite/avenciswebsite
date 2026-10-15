@@ -53,17 +53,17 @@ export const FounderDayHero: React.FC = () => {
   // Preload all high-res photography assets
   useEffect(() => {
     const imagesToPreload = [
-      '/assets/founder-stressed.jpg',
-      '/assets/founder-calm.jpg',
-      '/assets/1230 PM — WITHOUT AVENCIS.png',
-      '/assets/1230 PM — WITH AVENCIS.png',
-      '/assets/1500 PM — WITHOUT AVENCIS.png',
-      '/assets/1500 PM — WITH AVENCIS.png',
-      '/assets/1730 PM — WITHOUT AVENCIS.png',
-      '/assets/1730 PM — WITH AVENCIS.png',
-      '/assets/1900 PM — WITHOUT AVENCIS.png',
-      '/assets/1900 PM — WITH AVENCIS.png',
-      '/assets/Final CTA Image.png',
+      '/assets/founder-stressed.webp',
+      '/assets/founder-calm.webp',
+      '/assets/1230 PM — WITHOUT AVENCIS.webp',
+      '/assets/1230 PM — WITH AVENCIS.webp',
+      '/assets/1500 PM — WITHOUT AVENCIS.webp',
+      '/assets/1500 PM — WITH AVENCIS.webp',
+      '/assets/1730 PM — WITHOUT AVENCIS.webp',
+      '/assets/1730 PM — WITH AVENCIS.webp',
+      '/assets/1900 PM — WITHOUT AVENCIS.webp',
+      '/assets/1900 PM — WITH AVENCIS.webp',
+      '/assets/Final CTA Image.webp',
       '/assets/avencis-name-logo.png',
       '/assets/avencis-logo.png'
     ];
@@ -571,7 +571,7 @@ export const FounderDayHero: React.FC = () => {
             {/* High-Res Background Image with Cinematic Dark Overlay */}
             <div className="final-cta-bg-wrapper" aria-hidden="true">
               <img
-                src="/assets/Final CTA Image.png"
+                src="/assets/Final CTA Image.webp"
                 alt=""
                 className="final-cta-bg-img"
               />

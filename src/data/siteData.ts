@@ -19,7 +19,7 @@ export const FOUNDER_DAY_STORIES: Record<string, TimelineStory> = {
       subtitle: "The team is waiting for answers. Messages are piling up. Before the day begins, you're already catching up.",
       quote: '“I haven’t even opened my notebook, and there are already 4 urgent escalations waiting for my signature.”',
       description: "The team is waiting for answers. Messages are piling up. Before the day begins, you're already catching up.",
-      image: '/assets/founder-stressed.jpg',
+      image: '/assets/founder-stressed.webp',
       founderMood: 'Overloaded',
       checklist: [
         'Follow up with vendor on delayed raw material...',
@@ -62,7 +62,7 @@ export const FOUNDER_DAY_STORIES: Record<string, TimelineStory> = {
       subtitle: "Priorities are defined. Numbers are visible. Your team knows what's expected and what needs your attention.",
       quote: '“The morning dashboard tells me every plant is within tolerance. My focus today is purely on high-margin growth.”',
       description: "Priorities are defined. Numbers are visible. Your team knows what's expected and what needs your attention.",
-      image: '/assets/founder-calm.jpg',
+      image: '/assets/founder-calm.webp',
       founderMood: 'In Control',
       outcomes: [
         'Clear Reports & Real-Time Dashboards',
@@ -105,7 +105,7 @@ export const FOUNDER_DAY_STORIES: Record<string, TimelineStory> = {
       subtitle: 'A delayed order. An unanswered quotation. A production issue. Everyone needs your decision before they can move.',
       quote: '“Instead of meeting prospective enterprise clients, I’m stuck arbitrating another argument between sales and production.”',
       description: 'A delayed order. An unanswered quotation. A production issue. Everyone needs your decision before they can move.',
-      image: '/assets/1230 PM — WITHOUT AVENCIS.png',
+      image: '/assets/1230 PM — WITHOUT AVENCIS.webp',
       founderMood: 'Bottlenecked',
       checklist: [
         'Mediate dispute between Sales and Production leads...',
@@ -147,7 +147,7 @@ export const FOUNDER_DAY_STORIES: Record<string, TimelineStory> = {
       subtitle: 'Your team follows defined processes, escalates exceptions and takes responsibility for moving work forward.',
       quote: '“While the EMT runs the midday production sync, I am finalizing a ₹15 Cr enterprise contract with a new strategic client.”',
       description: 'Your team follows defined processes, escalates exceptions and takes responsibility for moving work forward.',
-      image: '/assets/1230 PM — WITH AVENCIS.png',
+      image: '/assets/1230 PM — WITH AVENCIS.webp',
       founderMood: 'Empowered',
       outcomes: [
         'EMT Runs Weekly Operating Rhythms',
@@ -190,7 +190,7 @@ export const FOUNDER_DAY_STORIES: Record<string, TimelineStory> = {
       subtitle: "You chase reports, check numbers and ask for updates just to understand what's happening across the business.",
       quote: '“I built a ₹50 Crore company, so why am I spending my afternoon chasing uncollected invoices and checking inventory sheets?”',
       description: "You chase reports, check numbers and ask for updates just to understand what's happening across the business.",
-      image: '/assets/1500 PM — WITHOUT AVENCIS.png',
+      image: '/assets/1500 PM — WITHOUT AVENCIS.webp',
       founderMood: 'Blindspots',
       checklist: [
         'Dial top 5 clients personally to chase overdue payments...',
@@ -232,7 +232,7 @@ export const FOUNDER_DAY_STORIES: Record<string, TimelineStory> = {
       subtitle: 'Sales, profitability and operations are measured. Regular reviews highlight gaps, so decisions are based on facts—not guesswork.',
       quote: '“Cash flow is predictable. Our DSO is at 42 days. Today I am meeting our joint venture partner to plan international expansion.”',
       description: 'Sales, profitability and operations are measured. Regular reviews highlight gaps, so decisions are based on facts—not guesswork.',
-      image: '/assets/1500 PM — WITH AVENCIS.png',
+      image: '/assets/1500 PM — WITH AVENCIS.webp',
       founderMood: 'Fact-Driven',
       outcomes: [
         'Automated 13-Week Cash Forecasting',
@@ -275,7 +275,7 @@ export const FOUNDER_DAY_STORIES: Record<string, TimelineStory> = {
       subtitle: 'Approvals are pending. Follow-ups remain. The important work gets pushed to tomorrow—or after everyone leaves.',
       quote: '“Everyone is packing up to leave, but my desk is still piled high with paperwork and unresolved fires.”',
       description: 'Approvals are pending. Follow-ups remain. The important work gets pushed to tomorrow—or after everyone leaves.',
-      image: '/assets/1730 PM — WITHOUT AVENCIS.png',
+      image: '/assets/1730 PM — WITHOUT AVENCIS.webp',
       founderMood: 'Exhausted',
       checklist: [
         'Clear 42 backlogged tactical emails before night...',
@@ -317,7 +317,7 @@ export const FOUNDER_DAY_STORIES: Record<string, TimelineStory> = {
       subtitle: 'Your team manages execution and escalates what matters. You can focus on growth, customers and the next big decision.',
       quote: '“The evening flash review took 10 minutes. The leadership team has tomorrow’s priorities locked. I am closing my laptop on time.”',
       description: 'Your team manages execution and escalates what matters. You can focus on growth, customers and the next big decision.',
-      image: '/assets/1730 PM — WITH AVENCIS.png',
+      image: '/assets/1730 PM — WITH AVENCIS.webp',
       founderMood: 'Strategic',
       outcomes: [
         '10-Minute Evening Flash Review',
@@ -360,7 +360,7 @@ export const FOUNDER_DAY_STORIES: Record<string, TimelineStory> = {
       subtitle: "WhatsApp keeps buzzing. Tomorrow's problems are already on your mind. Switching off feels like taking a risk.",
       quote: '“I’m physically home, but my mind is still in the factory, dreading tomorrow’s cash crunch and machine status.”',
       description: "WhatsApp keeps buzzing. Tomorrow's problems are already on your mind. Switching off feels like taking a risk.",
-      image: '/assets/1900 PM — WITHOUT AVENCIS.png',
+      image: '/assets/1900 PM — WITHOUT AVENCIS.webp',
       founderMood: 'Trapped',
       checklist: [
         'Respond to late night vendor payment panics...',
@@ -402,7 +402,7 @@ export const FOUNDER_DAY_STORIES: Record<string, TimelineStory> = {
       subtitle: 'Responsibilities are clear, performance is tracked and issues have escalation paths. You can step away with greater confidence.',
       quote: '“Avencis didn’t just grow our EBITDA. They gave me back my life, my health, and my time with my family.”',
       description: 'Responsibilities are clear, performance is tracked and issues have escalation paths. You can step away with greater confidence.',
-      image: '/assets/1900 PM — WITH AVENCIS.png',
+      image: '/assets/1900 PM — WITH AVENCIS.webp',
       founderMood: 'Liberated',
       outcomes: [
         'Genuinely Present with Family',
