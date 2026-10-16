@@ -4,6 +4,8 @@ import {
   AlertCircle,
   CheckCircle2,
   Sparkles,
+  User,
+  Users,
   ArrowRight
 } from 'lucide-react';
 import type { TimeOfDay } from '../types';
@@ -289,18 +291,69 @@ export const FounderDayHero: React.FC = () => {
     }
   };
 
+  // Measure comparison panels for exact SVG chevron geometry on desktop
+  const comparisonStripRef = useRef<HTMLDivElement>(null);
+  const [panelDims, setPanelDims] = useState<{ leftW: number; rightW: number; h: number }>({
+    leftW: 460,
+    rightW: 460,
+    h: 80,
+  });
+
+  useEffect(() => {
+    if (!comparisonStripRef.current) return;
+    const updateDimensions = () => {
+      if (!comparisonStripRef.current) return;
+      const leftEl = comparisonStripRef.current.querySelector<HTMLElement>('.founder-reality-panel.without');
+      const rightEl = comparisonStripRef.current.querySelector<HTMLElement>('.founder-reality-panel.with');
+      if (leftEl && rightEl) {
+        const lRect = leftEl.getBoundingClientRect();
+        const rRect = rightEl.getBoundingClientRect();
+        const maxH = Math.max(lRect.height, rRect.height, 78);
+        setPanelDims({
+          leftW: lRect.width,
+          rightW: rRect.width,
+          h: maxH,
+        });
+      }
+    };
+
+    updateDimensions();
+    const resizeObserver = new ResizeObserver(updateDimensions);
+    resizeObserver.observe(comparisonStripRef.current);
+    return () => resizeObserver.disconnect();
+  }, []);
+
+  const chevronDepth = 16;
+  const cornerRadius = 8;
+  const { leftW, rightW, h: panelH } = panelDims;
+
+  // Left card path: rounded top-left and bottom-left corners, flat top/bottom, right edge pointed chevron
+  const leftCardSvgPath = `M ${cornerRadius},1 L ${Math.max(1, leftW - chevronDepth)},1 L ${Math.max(1, leftW - 1)},${panelH / 2} L ${Math.max(1, leftW - chevronDepth)},${panelH - 1} L ${cornerRadius},${panelH - 1} A ${cornerRadius} ${cornerRadius} 0 0 1 1,${panelH - cornerRadius} L 1,${cornerRadius} A ${cornerRadius} ${cornerRadius} 0 0 1 ${cornerRadius},1 Z`;
+
+  // Intermediate chevron paths: band of uniform thickness 9px, depth 16px
+  const intermediateChevronPath = `M 1,1 L 10,1 L ${10 + chevronDepth - 1},${panelH / 2} L 10,${panelH - 1} L 1,${panelH - 1} L ${chevronDepth},${panelH / 2} Z`;
+
+  // Right card path: left edge indented chevron, flat top/bottom, right edge pointed chevron
+  const rightCardSvgPath = `M 1,1 L ${Math.max(1, rightW - chevronDepth)},1 L ${Math.max(1, rightW - 1)},${panelH / 2} L ${Math.max(1, rightW - chevronDepth)},${panelH - 1} L 1,${panelH - 1} L ${chevronDepth},${panelH / 2} Z`;
+
   return (
     <div className="founder-experience-root" id="founders-day">
       {/* ============================================================
-          CHANGE 1: INTRODUCTORY SECTION ABOVE SPLIT-SCREEN ANIMATION
+          FOUNDER’S DAY INTRODUCTORY SECTION
           ============================================================ */}
       <section className="founder-intro-section" id="founder-intro">
         <div className="container founder-intro-container">
           <div className="founder-intro-header">
-            <div className="eyebrow-badge orange" style={{ display: 'inline-flex' }}>
-              <Sparkles size={13} />
-              <span>Two Business Realities</span>
+            {/* Change 1: Eyebrow label flanked by subtle horizontal divider lines */}
+            <div className="founder-intro-eyebrow-wrapper">
+              <span className="founder-intro-eyebrow-line" aria-hidden="true" />
+              <div className="eyebrow-badge orange" style={{ display: 'inline-flex' }}>
+                <Sparkles size={13} />
+                <span>Two Business Realities</span>
+              </div>
+              <span className="founder-intro-eyebrow-line" aria-hidden="true" />
             </div>
+
             <h2 className="founder-intro-main-title font-serif">
               Your Business Shouldn't Need You for Everything.
             </h2>
@@ -309,39 +362,108 @@ export const FounderDayHero: React.FC = () => {
             </p>
           </div>
 
-          {/* Side-by-side comparison cards */}
-          <div className="founder-intro-comparison-grid">
+          {/* Change 2: Connected horizontal comparison panels with chevron editorial flow */}
+          <div className="founder-comparison-strip" ref={comparisonStripRef}>
             {/* Left Reality: Without Avencis */}
-            <div className="intro-reality-card without">
-              <div className="intro-reality-pill danger">
-                <AlertCircle size={11} />
-                <span>WITHOUT AVENCIS</span>
+            <div className="founder-reality-panel without">
+              <svg
+                className="founder-panel-bg-svg"
+                viewBox={`0 0 ${leftW || 460} ${panelH}`}
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  d={leftCardSvgPath}
+                  fill="#FAF0ED"
+                  stroke="#F6D3CD"
+                  strokeWidth="1.2"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <div className="founder-reality-content">
+                <div className="founder-reality-icon-circle" aria-hidden="true">
+                  <User size={18} strokeWidth={2.4} />
+                </div>
+                <div className="founder-reality-text">
+                  <span className="founder-reality-label">WITHOUT AVENCIS</span>
+                  <h3 className="founder-reality-heading font-serif">
+                    The Founder Is the System.
+                  </h3>
+                  <p className="founder-reality-subtext">
+                    Every question, decision and follow-up comes back to you.
+                  </p>
+                </div>
               </div>
-              <h3 className="intro-reality-heading font-serif">
-                The Founder Is the System.
-              </h3>
-              <p className="intro-reality-subtext">
-                Every question, decision and follow-up comes back to you.
-              </p>
             </div>
 
-            {/* Center VS Indicator */}
-            <div className="intro-reality-vs-badge" aria-hidden="true">
-              VS
+            {/* Center Connector with subtle chevron accents & VS marker */}
+            <div className="founder-comparison-connector" aria-hidden="true">
+              {/* Peach Chevron Segment */}
+              <svg
+                className="founder-chevron-segment"
+                viewBox={`0 0 ${10 + chevronDepth} ${panelH}`}
+                style={{ width: `${10 + chevronDepth}px`, height: `${panelH}px` }}
+              >
+                <path
+                  d={intermediateChevronPath}
+                  fill="#FAF0ED"
+                  stroke="#F6D3CD"
+                  strokeWidth="1.2"
+                  strokeLinejoin="round"
+                />
+              </svg>
+
+              {/* Central VS Badge */}
+              <div className="founder-comparison-vs-badge">
+                VS
+              </div>
+
+              {/* Green Chevron Segment */}
+              <svg
+                className="founder-chevron-segment"
+                viewBox={`0 0 ${10 + chevronDepth} ${panelH}`}
+                style={{ width: `${10 + chevronDepth}px`, height: `${panelH}px` }}
+              >
+                <path
+                  d={intermediateChevronPath}
+                  fill="#EEF6F2"
+                  stroke="#CFE6DA"
+                  strokeWidth="1.2"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
 
             {/* Right Reality: With Avencis */}
-            <div className="intro-reality-card with">
-              <div className="intro-reality-pill success">
-                <CheckCircle2 size={11} />
-                <span>WITH AVENCIS</span>
+            <div className="founder-reality-panel with">
+              <svg
+                className="founder-panel-bg-svg"
+                viewBox={`0 0 ${rightW || 460} ${panelH}`}
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  d={rightCardSvgPath}
+                  fill="#EEF6F2"
+                  stroke="#CFE6DA"
+                  strokeWidth="1.2"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <div className="founder-reality-content">
+                <div className="founder-reality-icon-circle" aria-hidden="true">
+                  <Users size={18} strokeWidth={2.4} />
+                </div>
+                <div className="founder-reality-text">
+                  <span className="founder-reality-label">WITH AVENCIS</span>
+                  <h3 className="founder-reality-heading font-serif">
+                    The System Supports the Founder.
+                  </h3>
+                  <p className="founder-reality-subtext">
+                    Your team owns execution. You focus on the decisions that move the business forward.
+                  </p>
+                </div>
               </div>
-              <h3 className="intro-reality-heading font-serif">
-                The System Supports the Founder.
-              </h3>
-              <p className="intro-reality-subtext">
-                Your team owns execution. You focus on the decisions that move the business forward.
-              </p>
             </div>
           </div>
 
